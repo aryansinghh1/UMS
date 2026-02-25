@@ -130,6 +130,10 @@ exports.resetPassword = async (req, res) => {
   const { email, newPassword } = req.body;
 
   try {
+    if (!email || !newPassword) {
+      return res.status(400).json({ message: "Email and new password required" });
+    }
+
     const user = await User.findOne({
       email: email.toLowerCase().trim(),
     });
@@ -138,11 +142,11 @@ exports.resetPassword = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    user.password = newPassword;
-    await user.save(); // pre-save hook hashes it
+    user.password = newPassword; // will be hashed by pre-save hook
+    await user.save();
 
     res.json({
-      message: "Password updated successfully! Please login.",
+      message: "Password updated successfully! Please login again.",
     });
 
   } catch (error) {
