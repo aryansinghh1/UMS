@@ -4,6 +4,10 @@ const jwt = require("jsonwebtoken");
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
+// The .sign() method from the jsonwebtoken library takes three main arguments:
+//{ id } (The Payload)
+//process.env.JWT_SECRET (The Secret Key)
+//{ expiresIn: "30d" } (The Options)
 };
 
 
