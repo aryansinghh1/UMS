@@ -13,7 +13,7 @@ const courseSchema = new mongoose.Schema(
     },
     credits: {
       type: Number,
-      default: 3,
+      default: 1,
     },
     description: {
       type: String,
