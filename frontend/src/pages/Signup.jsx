@@ -61,7 +61,6 @@ const Signup = () => {
               onChange={(e) => setFormData({...formData, role: e.target.value})}>
               <option value="student">Student</option>
               <option value="faculty">Faculty</option>
-              <option value="admin">Admin</option>
             </select>
             <input type="text" placeholder="Department" className="p-3 border rounded-xl outline-blue-500"
               value={formData.department}
