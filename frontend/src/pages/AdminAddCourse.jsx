@@ -25,7 +25,7 @@ const AdminAddCourse = () => {
     const fetchFaculty = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/admin/users?role=faculty",
+          "/api/admin/users?role=faculty",
           config
         );
         setFacultyList(data);
@@ -44,7 +44,7 @@ const AdminAddCourse = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/admin/courses",
+        "/api/admin/courses",
         formData,
         config
       );

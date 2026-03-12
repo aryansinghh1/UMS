@@ -20,7 +20,7 @@ const FacultyAttendance = () => {
       };
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/faculty/courses",
+        "/api/faculty/courses",
         config
       );
 
@@ -39,7 +39,7 @@ const FacultyAttendance = () => {
       };
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/courses/${selectedCourse}/students`,
+        `/api/courses/${selectedCourse}/students`,
         config
       );
 
@@ -74,7 +74,7 @@ const FacultyAttendance = () => {
       }));
 
       await axios.post(
-        "http://localhost:5000/api/attendance/mark",
+        "/api/attendance/mark",
         {
           courseId: selectedCourse,
           records,

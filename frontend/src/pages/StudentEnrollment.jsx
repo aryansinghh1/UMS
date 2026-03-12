@@ -12,7 +12,7 @@ const StudentEnrollment = () => {
   useEffect(() => {
     const fetchEnrolled = async () => {
       const { data } = await axios.get(
-        "http://localhost:5000/api/courses/my",
+        "/api/courses/my",
         config
       );
       setCourses(data);

@@ -15,7 +15,7 @@ const FacultyDashBoard = () => {
       try {
         console.log("📚 Fetching faculty courses...");
         const { data } = await axios.get(
-          "http://localhost:5000/api/courses/faculty",
+          "/api/courses/faculty",
           config
         );
         console.log("✅ Courses fetched:", data);

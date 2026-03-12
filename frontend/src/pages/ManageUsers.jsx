@@ -27,7 +27,7 @@ const ManageUsers = () => {
   const fetchUsers = async (role) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/admin/users?role=${role}`,
+        `/api/admin/users?role=${role}`,
         config
       );
       setUsers(data);
@@ -40,7 +40,7 @@ const ManageUsers = () => {
   const handleCreateUser = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/admin/users",
+        "/api/admin/users",
         formData,
         config
       );
@@ -67,7 +67,7 @@ const ManageUsers = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/admin/users/${id}`,
+        `/api/admin/users/${id}`,
         config
       );
 
@@ -81,7 +81,7 @@ const ManageUsers = () => {
   const handleRoleChange = async (id, newRole) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/admin/users/${id}/role`,
+        `/api/admin/users/${id}/role`,
         { role: newRole },
         config
       );

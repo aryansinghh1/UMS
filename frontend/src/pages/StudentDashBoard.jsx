@@ -20,7 +20,7 @@ const StudentDashboard = () => {
         // Get all courses
         console.log("📚 Fetching all courses...");
         const resCourses = await axios.get(
-          "http://localhost:5000/api/courses",
+          "/api/courses",
           config
         );
         console.log("✅ All courses fetched:", resCourses.data.length);
@@ -29,7 +29,7 @@ const StudentDashboard = () => {
         // Get enrolled courses
         console.log("📚 Fetching enrolled courses...");
         const resMyCourses = await axios.get(
-          "http://localhost:5000/api/courses/my",
+          "/api/courses/my",
           config
         );
         console.log("✅ Enrolled courses fetched:", resMyCourses.data.length);
@@ -54,7 +54,7 @@ const StudentDashboard = () => {
   const handleEnroll = async (courseId) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/courses/${courseId}/enroll`,
+        `/api/courses/${courseId}/enroll`,
         {},
         config
       );

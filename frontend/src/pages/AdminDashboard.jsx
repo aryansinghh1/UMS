@@ -19,7 +19,7 @@ const AdminDash = () => {
     const fetchStats = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/admin/stats",
+          "/api/admin/stats",
           config
         );
         setStats(data);
