@@ -17,6 +17,7 @@ import AdminAddCourse from "./pages/AdminAddCourse";
 import ManageUsers from "./pages/ManageUsers";
 import AdminDash from "./pages/AdminDashboard";
 import FacultyDashBoard from "./pages/FacultyDashBoard";
+import Messages from "./pages/Messages";
 
 function App() {
   const { user, loading } = useAuth();
@@ -76,6 +77,9 @@ function App() {
             path="/faculty/attendance/:courseId"
             element={<FacultyAttendance />}
           />
+
+          {/* 💬 Shared Messages Route */}
+          <Route path="/messages" element={<Messages />} />
         </Route>
       </Route>
 

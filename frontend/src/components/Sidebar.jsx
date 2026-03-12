@@ -1,14 +1,15 @@
 import { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { 
-  LayoutDashboard, 
-  BookOpen, 
-  Users, 
-  ClipboardCheck, 
-  LogOut, 
+import {
+  LayoutDashboard,
+  BookOpen,
+  Users,
+  ClipboardCheck,
+  LogOut,
   GraduationCap,
-  User as UserIcon
+  User as UserIcon,
+  MessageSquare
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -25,12 +26,14 @@ const Sidebar = () => {
     faculty: [
       { name: 'My Dashboard', path: '/faculty-dashboard', icon: <LayoutDashboard size={20}/> },
       { name: 'Attendance', path: '/faculty/attendance', icon: <ClipboardCheck size={20}/> },
+      { name: 'Messages', path: '/messages', icon: <MessageSquare size={20}/> },
     ],
     student: [
       { name: 'Portal', path: '/student-dashboard', icon: <LayoutDashboard size={20}/> },
       { name: 'Enrollment', path: '/student/enroll', icon: <GraduationCap size={20}/> },
       { name: 'My Attendance', path: '/student/attendance', icon: <ClipboardCheck size={20}/> },
       { name: 'My Grades', path: '/student/grades', icon: <BookOpen size={20}/> },
+      { name: 'Messages', path: '/messages', icon: <MessageSquare size={20}/> },
     ]
   };
 

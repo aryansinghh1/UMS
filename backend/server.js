@@ -8,6 +8,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const facultyRoutes = require('./routes/facultyRoutes');
 const universityProxy = require('./middleware/proxyMiddleware');
 const attendanceRoutes = require("./routes/attendanceRoutes");
+const messageRoutes = require('./routes/messageRoutes');
 
 
 // Load environment variables
@@ -29,6 +30,7 @@ app.use('/api/courses', courseRoutes);
 app.use('/api/faculty', facultyRoutes);
 app.use('/api/admin', adminRoutes);
 app.use("/api/attendance", attendanceRoutes);
+app.use('/api/messages', messageRoutes);
 
 
 // Basic Test Route
