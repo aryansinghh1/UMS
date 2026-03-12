@@ -35,8 +35,6 @@ exports.registerUser = async (req, res) => {
     let userRole = role || "student";
 
     if (userRole === "student") prefix = "STU";
-    else if (userRole === "faculty") prefix = "FAC";
-    else if (userRole === "admin") prefix = "ADM";
     else {
       return res.status(400).json({ message: "Invalid role selected" });
     }
